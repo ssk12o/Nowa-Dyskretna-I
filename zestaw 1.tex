@@ -1,0 +1,463 @@
+\documentclass{mwbk}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\usepackage{mdframed}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{url}
+
+
+
+\newtheorem{zad}{Zadanie}[chapter]
+
+
+\begin{document}
+\title{Nowa Dyskretna I}
+\date{\today}
+\maketitle
+
+Hejka!
+
+W związku z reworkiem Dyskretnej I jakiego doświadczyliśmy w zeszłym
+roku -- a przez to unieważnienieniem zbieranej przez lata bazy (i
+fenomenalnych notatek Jakuba Żuchowskiego) postanowiłem chociaż
+spróbować coś zmienić w tej materii. Tak więc oto tutaj zaczyna się
+świadectwo tej próby. \newline
+
+
+Na start przyznam szczerze, że jest to projekt baaaaardzo w przebudowie,
+dopiero zaczynam zabawę z \LaTeX --em, mam mocno średni wpm, a o skillsach
+z dyskretnej nie wspomnę... -- więc tu się zwracam z prośbą o pomoc do
+Ciebie, drogi czytelniku!\newline
+
+Liczę, że wspólnymi siłami uda nam się stworzyć coś, co przyda się
+nie tylko przyszłym rocznikom -- ale i nam podczas nauki do kolokwiów
+i ćwiczeń. Tak więc jeżeli masz jakieś uwagi i poprawki możesz
+się z nimi ze mną podzielić na Discordzie pod nickiem \url{ssk12.}
+lub na kanale dyskretnej. Tak samo własne rozwiązania bardzo ułatwią mi pracę.
+Jeżeli będziesz chciał, możesz zostać wspomniany jako autor rozwiązania.\newline
+
+Link do repo na githubie, gdzie znajduje się aktualna wersja tego pliku:
+\url{https://github.com/ssk12o/Nowa-Dyskretna-I} \newline
+
+Zadania są kodwane w następujący sposób:
+\begin{itemize}
+    \item Ć -- chaotyczne notatki z ćwiczeń, esencja \textit{work in progress},
+    \item W - wskazówka, szkic rozwiązania, niepełne rozwiązanie (nie odpowidam za jakość),
+    \item A -- rozwiązanie autorskie,
+    \item AR `Jan Kowalski' -- rozwiązanie dzi,
+    \item BRAK -- oczywiste. Zachęcam jednak do podesłania własnego rozwiązania.
+\end{itemize}
+
+\tableofcontents
+
+\chapter{Zestaw 1}
+
+
+\begin{zad}[W]
+    Na płaszczyźnie poprowadzono $n$ prostych, z których żadne dwie nie
+    są równoległe i żadne trzy nie przechodzą przez ten sam punkt.
+    Wyznacz liczbę:
+    \begin{enumerate}
+        \item obszarów, na które te proste dzielą płaszczyznę;
+        \item obszarów ograniczonych, na które te proste dzielą płaszczyznę.
+    \end{enumerate}
+\end{zad}
+\begin{proof}
+    Podpunkty:
+    \begin{enumerate}
+        \item Warto zauważyć, że ze względu na warunki z treści
+              wiemy, że każda $n$-ta nowa prosta którą dokładamy przecina każdą z $n-1$
+              prostych które już istnieją -- i tworzy $n$ nowych obszarów. Tak więc
+              $R(n)= R(n-1) + n$. Starczy rozwalić rekurencję.
+        \item Podobnie.
+    \end{enumerate}
+\end{proof}
+
+\begin{zad}[W]
+    Ciąg Fibonacciego $\{F_n\}_{n \in \mathbb{N}}$ zadany jest przez
+    $F_0=0$, $F_1=1$ i $F_{n+2}=F_{n+1}+F_n$. Udowodnij, że: \\
+    \begin{enumerate}
+        \item $F_0 + ... + F_n = F_{n+2} - 1$;
+        \item $5|F_{5n}$,
+        \item $F_n < 2_n$.
+    \end{enumerate}
+\end{zad}
+\begin{proof}
+    Wszystkie podpunkty można łatwo dowieść indukcyjnie.
+\end{proof}
+
+\begin{zad}[BRAK]
+    Turniej $n$-wierzchołkowy to dowolny graf skierowany $G = (V, E)$, gdzie $|V| = n$
+    i w którym $(u, v) \in E$ lub $(v, u) \in E$ dla dowolnych $u, v \in V$.
+    Pokaż, że w dowolnym niepustym turnieju istnieje wierzchołek z którego można “przejść”
+    po krawędziach zgodnie z ich skierowaniem do dowolnego innego wierzchołka w co
+    najwyżej dwóch krokach.
+\end{zad}
+\begin{proof}
+\end{proof}
+
+\begin{zad}[Ć]
+    %Ni chuja nie mam pojęcia o co chodzi, nie miałem teorii grafów i nie czytałem o nich. \\
+    Udowodnij, że każdy turniej ma ścieżkę Hamiltona.
+\end{zad}
+\begin{proof}
+    Dowód indukcyjny.
+    \begin{enumerate}
+        \item przypadek trywialny
+        \item z założenia indukcyjnego wiemy że ten graf $G' = (V', E')$ ma
+              on ścieżkę Hamiltona. Nazwijmy ją $P = v_1 ... v_n$. Rozważmy:
+              \begin{enumerate}
+                  \item $(v, v_1) \in E$. Wtedy $P = v v_1 v_2 ... v_n$
+                  \item $(v_n, v)$ rys $P = v_1 v_2 ... v_n v$
+                  \item trzeci przypadek rys. Niech $i \in \{1, 2, 3, ..., n\}$
+                        będzie najmniejszym indeksem $(v_i, v) \in E$ oraz $(v, v_{i+1}) \in E$,
+                        wtedy $P = v_1 v_2 ... v_i v v_{i+1} v_{i+2} ... v_n$
+              \end{enumerate}
+    \end{enumerate}
+\end{proof}
+
+
+
+
+
+\begin{zad}[W]
+    W każdym polu szachownicy rozmiaru $n x n $ znajduje się jedna osoba.
+    Część osób zarażona jest wirusem grypy. Wirus grypy rozprzestrzenia się w dyskretnych
+    odstępach czasowych w sposób następujący:
+    \begin{itemize}
+        \item osoby zarażone pozostają zarażone,
+        \item osoba ulega zarażeniu jeżeli co najmniej dwie sąsiadujące z nią osoby są już zarażone
+              (przez osobę sąsiednią rozumiemy osobę siedzącą z przodu, z tyłu, z lewej lub prawej
+              strony).
+              Wykaż, że jeżeli na początku zarażonych jest istotnie mniej niż n osób, to w każdej chwili
+              przynajmniej jedna osoba pozostaje niezarażona.
+    \end{itemize}
+\end{zad}
+
+\begin{proof}
+    Jakaś podpowiedź. Przekątne (małe) dzielą plansze po zarażeniu
+    na kwadraty zarażonych. Przerwy w ciągach diagonalnych robią przerwy na końcu.
+
+    Ewentualnie:
+    Jeżeli rozrzuick komórki w pierwszej iteracji, jesti ich n-1. liczymi obwod
+    tej figory. obwod ten jest rowny maksymalnie 4n - 4
+
+    jesli tylko uzasadnic formalnie ze przy kazdej iteracji obwod
+    jest conajwyzej taki ajk poprzednio, co tez znaczy ze nie
+    wszystkie sa zarażone, bo obwod byłby równy 4n.
+
+    Jak udowodnić tą zależność?
+
+    Od bartka:
+    Pusta kratka, $n$ zarażonych obok i $n \in \{1, 2, 3, 4\}$.
+    Rozważamy przypadki ile krawędzi jest przy każdym $n$.
+    Patrzymy ile znika i ile powstaje. Dochodzimy do tego że jest
+    nie więcej.
+\end{proof}
+
+
+
+
+
+
+\begin{zad}[BRAK]
+    Wykaż, że w grupie $n$ osób istnieją dwie, które mają taka samą liczbę znajomych.
+\end{zad}
+\begin{proof}
+\end{proof}
+
+\begin{zad}[Ć]
+    Przy okrągłym stole jest $n$ miejsc oznaczonych proporczykami różnych
+    państw. Ambasadorowie tych państw usiedli przy tym stole tak, że żaden z nich nie siadł
+    przy właściwym proporczyku. Wykaż, że można tak obrócić stołem, że co najmniej 2
+    ambasadorów znajdzie się przed proporczykiem swojego państwa.
+\end{zad}
+\begin{proof}
+    Niech $f:[n] \to [n]$ tak że $\forall_{k\in[n]} f(x) \neq k$.
+    $f$ - permutacja
+    Niech $g$ - permutacja g = (1 2 3 4 5 ... n)
+    $O_n = f \circ g \circ g \circ g$ (i g złożone n razy)
+
+    Dirichlet. $\forall f:[n] \to [n-1]$ istnieje $x_1, x_2$
+    że $x_1\neq x_2$ tże $f(x_1)=f(x_2)$
+
+    $\forall_{k \in [n]} \exists_{i \in [n-1]} O_i(k) = k$
+    $\leftarrow$ funkcja by wrócił do właściwego proporczykami.
+
+    $F(k)$ = ilość obrotów stołem aby ambasador $k$ miał
+    przed sobą swój proporczyk.
+    Widzimy że nowa funkcja $F(k): [n] \to [n-1]$
+    Z zasady Dirichleta istnienieje dwóch ambasadorów $x_1, x_2$ tże $x_1 \neq x_2$
+    tże $F(x_1) = F(x_2)$.
+\end{proof}
+
+
+\begin{zad}[Ć]
+    Pokaż, że w dowolnym ciągu n liczb całkowitych istnieje (niepusty)
+    podciąg kolejnych elementów taki, że suma wyrazów podciągu jest wielokrotnością n.
+\end{zad}
+\begin{proof}
+    Weźmy ciąg: $a_1, a_2, a_3 ..., a_n$
+
+    Wprowadzmy ciag sum częściowych:
+    $S_k = a_1 + a_2 + ... + a_k$
+
+    Reszty z dzielenia przez $n$ są następującej postaci
+    $\{0, 1, 2, ... n_1\}$.
+    jesli istnije $S_k$ tże skmodn=o to koniec zadania
+
+    zalozmy ze tak nie jest, czyli ze dla kazdego ka w [n]
+    $S_k$ $mod n  \neq 0$
+    Czyli ile możliwości mamy na resztę od 1 do n-1.
+    z zasady diricchleta widzimy ze istnieje k'<k tże
+    Sk i Sk' maja tkaa sama reszte z dzielenia.
+    ale wtedy Sk-Sk' jest podzilene przez n i
+    reprezentuje sume ak'+1 + ak'+2 +...+ak
+
+    Widzimy zatem ze ciag ak'+1 do ak ma żadaną własność
+
+    jeżeli weżmiemy jakiś pierwszy podciąg
+    $a_1 modn \neq 0$
+    $a_1 + a_2 mod n \neq 0$ i $a_1 + a_2 mod n$
+
+\end{proof}
+
+
+
+
+
+\begin{zad}[BRAK]
+    Rozważ dowolną rodzinę podzbiorów zbioru $n$--elemetowego zawierającą
+    więcej niż połowę wszystkich podzbiorów. Wykaż, że w tej rodzinie muszą być dwa zbiory
+    takie, że jeden zawiera się w drugim.
+\end{zad}
+\begin{proof}
+\end{proof}
+
+
+
+\begin{zad}[BRAK]
+    Dla $n$--elementowego zbioru $X$ rozważ pewną rodzinę jego podzbiorów
+    $\mathcal{F}$, gdzie $|F| > n/2$ dla każdego $F \in \mathcal{F}$. Wykaż, że istnieje
+    $x \in X$ należący do co najmniej połowy zbiorów z $\mathcal{F}$.
+\end{zad}
+\begin{proof}
+
+\end{proof}
+
+
+\begin{zad}[Ć]
+    Dana jest kwadratowa szachownica $2n \times 2n$ z wyciętym jednym polem.
+    Wykaż, że dla wszystkich wartości $n \geq 1$ możemy pokryć tę szachownicę kostkami w
+    kształcie litery L (czyli kwadrat $2 \geq 2$ bez jednego pola).
+\end{zad}
+\begin{proof}
+    Dowód indukcyjny.
+    \begin{enumerate}
+        \item $n = 1$; rysunek 1
+        \item zał ind spełnione dla $n$. teza ind dla $n+1$. rysunek2 ogólnie dzielimy na
+              cztery, zał ind, od pozostałych trzech odejmujemy po jednym kawałeczku, załatwiamy
+              je z ind a kawałeczekki załatwiamy jednym l-em
+    \end{enumerate}
+\end{proof}
+
+\begin{zad}[Ć]
+    Dana jest kwadratowa szachownica $n \times n$. Dla jakich wartosci $n\geq 1$
+    możemy pokryć tę szachownicę kostkami wielkości $2 \times 2$ oraz $3 \times 3$.
+\end{zad}
+\begin{proof}
+    Dla kostek 2x2 i 3x3 oczywiste. Dla ich wielokrotności oczywsite.
+
+    Teraz łączenie. I go nie zrozumiałem. Well, shit happens.
+    Ale do przemyślenia.
+\end{proof}
+
+
+\begin{zad}[Zadanie 10]
+
+\end{zad}
+\begin{proof}
+    zrobione, ale średnio z zapisem.
+    Nie zrozumiałem, ale za to macie zdjątko tablicy.
+    rysunek1.
+    praca domowa
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Zestaw 2}
+\begin{zad}[W]
+    Na ile sposobów można ustawić $n$ wież na szachownicy
+    $n \times n$ tak, by żadne dwie nie znajdowały się w
+    polu wzajemnego rażenia.
+\end{zad}
+\begin{proof}
+    Starczy zauważyć, że dla każdej wieży wybieramy rząd i kolumnę
+    w której się znajduje -- i tym samym zmniejsza liczbę dostępnych
+    o jeden. Tak więc odpowiedź wynosi: \[n \cdot n \cdot (n-1) \cdot
+        (n-1) \cdot ... \cdot 2 \cdot 2 \cdot 1 \cdot 1 =  n! \cdot n!\]
+\end{proof}
+
+\begin{zad}[W]
+    Na ile sposobów można ustawić $k$ wież na szachownicy $n \times m$
+    tak, by żadne dwie nie znajdowały się w polu wzajemnego rażenia.
+\end{zad}
+\begin{proof}
+    Zadanie analogiczne od poprzedniego - z tym, że zmienił nam się
+    rozmiar planszy, a ponadto nie wypełniamy jej całej. Zasada
+    pozostaje jednak ta sama. Na start jednak warto założyć, że
+    $k \leq max\{n, m\}$ (choć w sumie jeżeli tak nie jest, to
+    odpowiedź to 0). Mając to już za sobą.
+    \[n \cdot m \cdot (n-1) \cdot (m-1) \cdot ... \cdot (n - k +1) \cdot (m -k +1)\]
+    (wykonujemy mnożenie $k + k$ elementów -- stąd to $-k + 1$).
+\end{proof}
+
+\begin{zad}
+    Znalźć definicje rekurencyjne następujących ciągów:
+    \begin{enumerate}
+        \item $a(n)$ -- liczba słów długości $n$ nad alfabetem
+              $\{0, 1\}$, które nie zawierają dwóch jedynek koło siebie.
+        \item  $b(n)$ -- liczba różnych pokryć prostokąta o wymiarze
+              $2 \times n$ dominami wymiaru $2 \times 1$.
+    \end{enumerate}
+\end{zad}
+\begin{proof}
+    \begin{enumerate}
+        \item Oczywiście $a(1)=2$, $a(2)=3$.  Rozważmy słowo n elementowe.
+              Zauważamy, że jeżeli ono kończy sie ono zerem to poprzedzające słowo $n-1$
+              elementowe jest dowolne. Jeżeli nastomiast kończy się jedynką,
+              to poprzedzające słowo $n-2$ elementowe jest dowolne
+              (tak jakby sie cofamy krok dalej by mieć dowolność).
+              Stąd: $a(n)=a(n-1)+a(n-2)$.
+        \item Analogicznie do poprzedniego. Jak wiemy $a(1) = 1$, $a(2) = 2$. Zastanówmy się nad $a(n)$:
+              Rozważamy ciąg o dłuugości $n$. Jeżeli na końcu jest blok poziomy,
+              to wiemy że powstał on z ciągu długości $a(n-2)$.
+              Jeżeli jest pionowy, to widzmy że musiał on powstać z ciągu długości $n-1$.
+              A stąd $a(n) = a(n-1) + a(n-2)$.
+    \end{enumerate}
+\end{proof}
+
+\begin{zad}[W]
+    Ile rozwiązań ma równanie $x_1 + x_2+x_3+x_4 = 7$:
+    \begin{enumerate}
+        \item gdzie $x_i$ są liczbami naturalnymi?
+        \item gdzie $x_i$ są dodatnimi liczbami naturalnymi?
+    \end{enumerate}
+\end{zad}
+\begin{proof}
+    Starczy wykonać siatkę która na dole ma $x_1 ... x_4$, a w rzędach
+    wartości od 0 (1) do 7. Wysokość nad $x_i$ oznacza wartość sumy do
+    tego elementu włącznie, a przeskok względem poprzedniej wysokości
+    oznacza wartość danego $x_i$. Więc można to potraktować jako ścieżki,
+    a na mocy własności z wykładu wiemy ile jest ścieżek po kracie. Tak więc:
+    \begin{enumerate}
+        \item \[\binom{7+4-1}{7}=\binom{10}{7}\]
+        \item \[\binom{3+4-1}{3}=\binom{6}{3}\]
+    \end{enumerate}
+\end{proof}
+
+
+
+\begin{zad}
+    Rozważmy czekoladę złożoną z $m\times n$ kostek.
+    Na ile sposobów można wykroić prostokąt złożony z $k \times k$
+    sąsiadujących ze sobą kostek ze sobą kostek czekolady?
+\end{zad}
+\begin{proof}
+    Na początek warto wykonać założenia $k \leq n$, $k \leq m$
+    (albo stwierdzić że wtedy odpowiedź to zero). Potem
+\end{proof}
+
+
+\begin{zad}
+    (Reguła sumowania po górnym indeksie). Udowodnij, że dla
+    $n, k \in \mathbb{N}$ zachodzi
+    \[\sum_{j=0}^k\binom{j}{k} = \binom{n+1}{k+1}\]
+\end{zad}
+\begin{proof}
+    Starczy zrobić indukcje. Wychodzi za darmo.
+    Kombinarotrycznie też się da.
+\end{proof}
+
+\begin{zad}
+    (Reguła sumowania równoległego). Udowodnij, że dla $n, k \in \mathbb{N}$
+    zachodzi \[     \]
+\end{zad}\
+\begin{proof}
+    Starczy zrobić indukcje. Wychodzi za darmo.
+\end{proof}
+
+\begin{zad}
+    Ile jest funkcji $f:\{1, ..., n\} \to \{1, ..., n\}$ monotonicznych takich,
+    że $f(i) \leq f(j) $ dla $i < j$?
+\end{zad}
+\begin{proof}
+    Rozwiązanie kożystające z tej samej koncepcji co 4 z tego zestawu.
+    Tworzymy kratkę, gdzie kolumny to argumenty, a rzędy to wartości.
+    Interesują nas ścieżki z początku do końca - które generują nam wszystkie funkcje
+    spełniające warunki zadania. Tak więc:
+    \[ \binom{n + n -1 }{n} = \binom{2n-1}{n} \].
+\end{proof}
+
+
+\begin{zad}
+    Ile jest $k$--elementowych podzbiorów zbioru $n$--elementowego, które nie
+    zawierają dwóch sąsiednich liczb?
+\end{zad}
+\begin{proof}
+    Jest nie jest to funkcja 1 - 0 (funkcaj charakterystyczna). Generujemy
+    zbiór typu 10101 aż do uzyskania k jedynek (tu k=3), ustalamy miejsca
+    w które możemy dopełniać zerami (by ciągi były długości n - funkcja
+    charakterystyczna). Czyli mamy k-1 zer na start, n-k-k+1 zer jeszcze do zrobienia
+
+
+    Czyli finalnir
+    \[\binom{n-k+1}{k}  \]
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
