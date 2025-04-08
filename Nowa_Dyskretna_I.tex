@@ -845,7 +845,9 @@ Zadania są kodowane w następujący sposób:
     %\[(\lambda_1! \lambda_2! \cdot ... \cdot \lambda_n!)\]
     %nowe, dobre, jawora
 \end{mdframed}
-
+\begin{mdframed}
+    A -- jak w treści zadania
+\end{mdframed}
 
 
 
@@ -857,8 +859,7 @@ Zadania są kodowane w następujący sposób:
     Kombinatorycznie:
 
     \textit{Lewa:}
-    Liczba podziałów zbiory $\left[n+1\right]$ na $m+1$ bloków:
-    \[S(n+1,m+1)\]
+    Liczba podziałów zbiory $\left[n+1\right]$ na $m+1$ bloków: \[S(n+1,m+1)\]
 
     \textit{Prawa:}
     Wybieramy $k$ liczb które nie będą w nowym bloku z liczbą $n+1$.
@@ -871,7 +872,12 @@ Zadania są kodowane w następujący sposób:
     \end{center}
 
 \end{mdframed}
+\begin{mdframed}
 
+    $X$ -- wszystkie podziały $(n+1)$ elementowego zbioru na $(m+1)$ partycji.
+    $X_k$ -- te podziały z $X$ takie że element $n+1$ jest w partycji z $n-k$ elementami.
+    Rodzina $X_k$ jest rozłącznym pokryciem $X$ oraz $|X_k| = \binom{n}{k}S(k,m)$
+\end{mdframed}
 
 
 
