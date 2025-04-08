@@ -1,0 +1,175 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={16cm, 25cm}]{geometry}
+\usepackage{polski}
+\usepackage{amsmath}
+\usepackage{amssymb}
+% \usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\usepackage{cancel}
+\usepackage{tikz}
+\usepackage{cases}
+\usepackage{listings}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{stackrel}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{tikz-among-us}
+\usepackage{tikz-cd}
+\usepackage{tocloft}
+\usepackage{wasysym}
+\usepackage{upgreek}
+\usepackage{mdframed}
+\usepackage{eso-pic}
+% \usepackage[cor=pink!80!white,BG,type=0]{tikz-among-us-watermark-eso-pic}
+\newtheorem{definition}{Definicja}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\mdfsetup{%
+% frametitlerule=true,
+% subtitlebelowline=true,
+subtitleaboveline=true,
+subtitleaboveskip=0,
+subtitlebelowskip=0,
+linewidth=1pt}
+\usetikzlibrary{angles,quotes,calc}
+\usetikzlibrary{arrows.meta}
+\newcommand{\fl}{\operatorname{fl}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\cond}{\operatorname{cond}}
+\newcommand{\aar}[1][]{\ar[#1, shorten=2mm, end anchor=west, start anchor=east]}
+\newenvironment{lista}[2][]{\newpage
+\begin{center}
+    \section[Lista \textbf{#2}]{Metody Numeryczne 1, lista #2}
+\end{center}
+\bigskip
+#1
+\begin{enumerate}[label=\textbf{#2\arabic*.}]}{\end{enumerate}}
+\newcommand{\zad}[1][0.5]{\item \emph{(#1 pkt.) }}
+\newcommand{\linia}{\centerline{\textcolor{gray}{\rule{10cm}{0.4pt}}}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecafterpnum}{\hspace*{7.5em}}
+\setlength{\cftsecindent}{7.5em}
+
+\author{\textbf{Maksymilian Soszyński} \\ \textsf{Informatyka i Systemy Informacyjne | MiNI PW}}
+\title{%
+
+\textbf{Metody Numeryczne I}}
+\date{}
+\setcounter{secnumdepth}{0}
+\pagestyle{fancy}
+\setlength{\headsep}{1.2cm}
+\fancyhead{}
+\lhead{Maksymilian Soszyński\\\textsf{Wydział MiNI PW}}
+\chead{\large \textbf{Rozwiązania zadań}}
+\rhead{\textbf{Metody Numeryczne I}\\\nouppercase\leftmark}
+
+\fancyfoot{}
+%\rfoot{\texttt{\thepage}}
+ \rfoot{
+     \begin{tikzpicture}
+     \amongUsI[rotate around={-45*(\thepage-2):(1.75,2.3)},
+     scale=0.25, shift={(5,7)}]{red}{cyan}
+     \node at (1.75,2.3) {\bfseries\thepage};
+     \end{tikzpicture}
+ }
+\fancypagestyle{specialfooter}{%
+    \fancyhf{}
+    \renewcommand\headrulewidth{0pt}
+    \fancyfoot[C]{\date{\today}}
+}
+
+\begin{document}
+\maketitle
+
+
+\begin{lista}[\paragraph*{Definicja.} Macierz $A\in\R^{n\times n}$ jest \emph{dodatnio określona}, jeśli $x^TAx>0$ dla każdego niezerowego wektora $x\in\R^n$.]{A}
+    \zad Pokaż, że jeśli $A\in\R^{n\times n}$ i $B\in\R^{n\times n}$ są dodatnio określone, to $A + B$ też jest dodatnio określona.
+
+    Czy iloczyn dwóch macierzy dodatnio określonych jest macierzą dodatnio określoną? Odpowiedź uzasadnij.
+    \begin{mdframed}
+        \begin{proof}
+            Niech $A$ i $B$ będą dodatnio określone. Z definicji mamy
+            \[ \forall_{0\neq x\in\R^n} \quad x^TAx > 0 \land x^TBx > 0. \]
+            Dodając nierówności stronami otrzymujemy
+            \[ \forall_{0\neq x\in\R^n} \quad x^TAx + x^TBx > 0 \]
+            Wyłączamy $x^T$ przed nawias oraz $x$ za nawias, korzystając z rozdzielności
+            \[ \forall_{0\neq x\in\R^n} \quad x^T(A+B)x > 0. \qedhere \]
+        \end{proof}
+
+        \mdfsubtitle{Kontrprzykład.
+            $A = \begin{bmatrix} 1 & -1 \\ 1 & 1 \end{bmatrix}$, \quad $B = \begin{bmatrix} 1 & -2 \\ 2 & 1 \end{bmatrix}$}
+
+        Macierze A i B są dodatnio określone ($a,b\in\R, \;a\neq0\lor b\neq0$):
+        \[ [a\ b] A \begin{bmatrix} a \\ b \end{bmatrix} = a^2+b^2>0 \quad\text{oraz}\quad[a\ b] B \begin{bmatrix} a \\ b \end{bmatrix} = a^2+b^2>0.\]
+        Ale wtedy macierz $AB = \begin{bmatrix} -1 & -3 \\ 3 & -1 \end{bmatrix}$ oraz
+        Czyli iloczyn dwóch macierzy dodatnio określonych nie musi taki być.\\
+        \emph{W późniejszej części semestru zostanie wprowadzone Kryterium Sylvestra, które pozwoli badać określoność wyznacznikami danych macierzy symetrycznych.}
+    \end{mdframed}
+
+    \zad[0.75] Pokaż, że wszystkie wartości własne macierzy symetrycznej dodatnio określonej są dodatnie.
+
+    Czy macierz, której wszystkie wartości własne są dodatnie, jest dodatnio określona? Odpowiedź uzasadnij.
+
+    \begin{mdframed}
+        \begin{proof}
+            Niech $A$ będzie macierzą symetryczną dodatnio określoną. Macierz $A$ jest symetryczna, więc wszystkie wartości własne macierzy są rzeczywiste. \\ Niech $\lambda$ będzie wartością własną macierzy dla niezerowego wektora $x\in\R^n$.
+
+            Wtedy
+            \[ x^T(Ax) = x^T(\lambda x) = \lambda(x^Tx) = \lambda \sum_{i=1}^n x_i^2 > 0. \]
+            Z założenia dodatniej określoności wiemy, że ten iloczyn jest dodatni, a suma kwadratów elementów wektora jest dodatnia. Wartość własna $\lambda$ jest więc dodatnia. \qedhere \\
+        \end{proof}
+
+        \mdfsubtitle{Kontrprzykład. $A = \begin{bmatrix} 1 & 0 \\ 10 & 1 \end{bmatrix}$}
+
+        \[ \det(A-\lambda I) = \det \begin{bmatrix} 1 - \lambda & 0 \\ 10 & 1 - \lambda \end{bmatrix} = (1-\lambda)^2 = 0 \]
+        Wartością własną macierzy A jest $\lambda = 1 > 0$, ale dla wektora $x = \begin{bmatrix} -1 \\ 1 \end{bmatrix}$ mamy
+        \[ x^TAx = -8 \leq 0. \]
+        Więc macierz $A$ nie jest dodatnio określona.
+    \end{mdframed}
+
+    \zad\label{A3} Wykaż, że jeśli $A\in\R^{n\times n}$ jest dodatnio określona, to $a_{i,i} > 0$ dla każdego $i = 1,\dots,n$ ($a_{i,i}$ oznacza element leżący na głównej przekątnej macierzy $A$, w $i$-tym wieszu).
+
+    \begin{mdframed}
+        \begin{proof}
+            Niech $A$ będzie macierzą dodatnio określoną. Niech $x_i = \begin{bmatrix} 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \end{bmatrix}$, gdzie $1$ jest w $i$-tym wierszu. Wtedy
+            \[ x_i^T\overbrace{\begin{bmatrix} a_{1,1} & \cdots & a_{1,n} \\ \vdots & \ddots & \vdots \\ a_{n,1} & \cdots & a_{n,n} \end{bmatrix}}^A x_i = a_{i,i}\]
+            $x_i^TA$ --- $i$-ty wiersz\\
+            $x_i^TAx_i$ --- $i$-ty element $i$-tego wiersza.
+
+            Ale z założenia $\forall_{0\neq x\in\R^n} \quad x^TAx > 0$ otrzymujemy $\forall_{i \in\{1,\dots,n\}}\quad a_{i,i} > 0$.
+        \end{proof}
+    \end{mdframed}
+\end{lista}
+
+
+\begin{mdframed}
+    Niech $q$ będzie wartością ekstremalną tej paraboli. Wtedy
+    \[ q(b) = \frac{-\Delta}{4a} = \frac{-(b^2-4)}{4} = \frac{-b^2+4}{4} = -\frac{1}{4}b^2 + 1 \]
+    \[ C(x) = \biggl|\frac{b\cdot q'(b)}{q(b)}\biggr| = \biggl|\frac{-2b^2}{-b^2+4}\biggr| = \biggl|\frac{2b^2}{b^2-4}\biggr| \]
+    Dla $b \approx 2$ i $b \approx -2$ wartość $C(b)$ jest bardzo duża (zadanie jest źle uwarunkowane).\\
+    Dla $b \approx 0$ wartość $C(b)$ jest bliska $0$, błędy zostaną stłumione.
+    \[ \lim_{x\to\pm\infty} C(x) = 2\]
+    Dla $|x - 2| \gg 0$ i $|x + 2| \gg 0$ wartość $C(x)$ jest bliska $2$ (zadanie jest dobrze uwarunkowane).
+\end{mdframed}
+
+
+\begin{mdframed}
+    Ze wzoru na pole i definicji tangensa, gdzie a -- krawędź boczna, h -- wysokość, P -- pole:
+    \[ P = \frac{1}{2}\cdot2\cdot h \Rightarrow P = h \]
+    \[ \tg \alpha = \frac{h}{1} \Rightarrow h = \tg \alpha \]
+    \[ P = \tg \alpha \]
+    \[ C(\alpha) = \biggl|\frac{\alpha\cdot P'}{P}\biggr| = \biggl|\frac{\alpha\cdot \tg \alpha'}{\tg \alpha}\biggr| = \biggl|\frac{2\alpha}{\sin(2\alpha)}\biggr| \]
+    Dla $\alpha \approx \frac{\pi}{2}$ wartość $C(\alpha)$ jest bardzo duża (zadanie jest źle uwarunkowane).\\
+    Dla $\alpha \approx 0$ wartość $C(\alpha)$ jest bliska $1$ (zadanie jest dobrze uwarunkowane).
+\end{mdframed}
+
+
+
+
+
+\end{document}

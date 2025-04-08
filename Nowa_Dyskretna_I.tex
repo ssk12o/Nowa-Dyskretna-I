@@ -1,0 +1,1096 @@
+\documentclass{mwbk}
+
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{url}
+\usepackage[nobreak=true]{mdframed}
+\usepackage{hyperref}
+\usepackage{graphics}
+
+
+%           środowiska numerowane
+\newtheorem{zad}{Zadanie}[chapter]
+
+
+%           nagłówki i stopki
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhf{}
+%
+%\fancyhead[L]{\includegraphics[height=0.666.com]{logo_uczelni.png}}
+%\fancyhead[R]{Nowa Dyskretna 1}
+%\fancyfoot[R]{\thepage}
+
+
+
+
+
+
+%           strona tytułowa
+
+
+
+\begin{document}
+\title{Nowa Dyskretna I}
+\author{}
+\date{\today}
+\maketitle
+
+\begin{center}
+    \textbf{\href{https://drive.google.com/drive/folders/1ma90kiyWDu3Lr4yZNFwNr48FS1fOthvE}{Aktualna wersja pliku znajduje sie tutaj! }}
+\end{center}
+
+
+
+Hejka!
+
+W związku z reworkiem Dyskretnej I jakiego doświadczyliśmy w zeszłym
+roku -- a przez to unieważnienieniem zbieranej przez lata bazy (i
+fenomenalnych notatek Jakuba Żuchowskiego) postanowiłem chociaż
+spróbować coś zmienić w tej materii. Tak więc oto tutaj zaczyna się
+świadectwo tej próby. \newline
+
+
+Na start przyznam szczerze, że jest to projekt baaaaardzo w przebudowie,
+dopiero zaczynam zabawę z \LaTeX --em, mam mocno średni wpm, a o skillsach
+z dyskretnej nie wspomnę... -- więc tu się zwracam z prośbą o pomoc do
+Ciebie, drogi czytelniku!\newline
+
+Liczę, że wspólnymi siłami uda nam się stworzyć coś, co przyda się
+nie tylko przyszłym rocznikom -- ale i nam podczas nauki do kolokwiów
+i ćwiczeń. Tak więc jeżeli masz jakieś uwagi i poprawki możesz
+się z nimi ze mną podzielić na Discordzie, gdzie znajdziesz mnie pod nickiem \url{ssk12o}
+lub na kanale dyskretnej. Tak samo Twoje rozwiązania bardzo ułatwią mi pracę.
+Możesz je wysłać mi na priv, albo -- co preferowane, wrzucić do odpowiedniego folderu
+na moim dysku google (\href{https://drive.google.com/drive/folders/1ma90kiyWDu3Lr4yZNFwNr48FS1fOthvE?usp=sharing}{tutaj!}).
+Plik nazwij numerem zadania, a także, jeżeli chcesz być wspomniany jako autor rozwiązania -- w cudzysłowach wpisz swoje imie/nick. \newline
+
+%Link do repo na githubie, gdzie znajduje się aktualna wersja tego pliku:
+%\url{https://github.com/ssk12o/Nowa-Dyskretna-I} \newline
+
+
+Zadania są kodowane w następujący sposób:
+\begin{itemize}
+    \item W     - chaotyczne notatki z ćwiczeń, wskazówka, szkic rozwiązania, niepełne rozwiązanie (nie odpowiadam za jakość),
+    \item R    - rozwiązanie raczej dobre,
+    \item BRAK  - oczywiste. Zachęcam jednak do podesłania własnego rozwiązania,
+    \item `Jan Kowalski' - szczególne podziękowanie dla wymienionego.
+\end{itemize}
+
+\tableofcontents
+
+\chapter{Zestaw 1}
+
+\textbf{UWAGA! PIERWSZY ZESTAW SKŁADA SIĘ GŁÓWNIE Z (JESZCZE) NIEOBROBIONYCH NOTATEK Z ĆWICZEŃ}
+
+
+\begin{zad}[W]
+    Na płaszczyźnie poprowadzono $n$ prostych, z których żadne dwie nie
+    są równoległe i żadne trzy nie przechodzą przez ten sam punkt.
+    Wyznacz liczbę:
+    \begin{enumerate}
+        \item obszarów, na które te proste dzielą płaszczyznę;
+        \item obszarów ograniczonych, na które te proste dzielą płaszczyznę.
+    \end{enumerate}
+\end{zad}
+\begin{mdframed}
+    Podpunkty:
+    \begin{enumerate}
+        \item Warto zauważyć, że ze względu na warunki z treści
+              wiemy, że każda $n$-ta nowa prosta którą dokładamy przecina każdą z $n-1$
+              prostych które już istnieją -- i tworzy $n$ nowych obszarów. Tak więc
+              $R(n)= R(n-1) + n$. Starczy rozwalić rekurencję.
+        \item Podobnie.
+    \end{enumerate}
+\end{mdframed}
+
+\begin{zad}[W]
+    Ciąg Fibonacciego $\{F_n\}_{n \in \mathbb{N}}$ zadany jest przez
+    $F_0=0$, $F_1=1$ i $F_{n+2}=F_{n+1}+F_n$. Udowodnij, że: \\
+    \begin{enumerate}
+        \item $F_0 + ... + F_n = F_{n+2} - 1$;
+        \item $5|F_{5n}$,
+        \item $F_n < 2_n$.
+    \end{enumerate}
+\end{zad}
+\begin{mdframed}
+    Wszystkie podpunkty można łatwo dowieść indukcyjnie.
+\end{mdframed}
+
+\begin{zad}[BRAK]
+    Turniej $n$-wierzchołkowy to dowolny graf skierowany $G = (V, E)$, gdzie $|V| = n$
+    i w którym $(u, v) \in E$ lub $(v, u) \in E$ dla dowolnych $u, v \in V$.
+    Pokaż, że w dowolnym niepustym turnieju istnieje wierzchołek z którego można “przejść”
+    po krawędziach zgodnie z ich skierowaniem do dowolnego innego wierzchołka w co
+    najwyżej dwóch krokach.
+\end{zad}
+\begin{mdframed}
+\end{mdframed}
+
+\begin{zad}[W]
+    %Ni chuja nie mam pojęcia o co chodzi, nie miałem teorii grafów i nie czytałem o nich. \\
+    Udowodnij, że każdy turniej ma ścieżkę Hamiltona.
+\end{zad}
+\begin{mdframed}
+    Dowód indukcyjny.
+    \begin{enumerate}
+        \item przypadek trywialny
+        \item z założenia indukcyjnego wiemy że ten graf $G' = (V', E')$ ma
+              on ścieżkę Hamiltona. Nazwijmy ją $P = v_1 ... v_n$. Rozważmy:
+              \begin{enumerate}
+                  \item $(v, v_1) \in E$. Wtedy $P = v v_1 v_2 ... v_n$
+                  \item $(v_n, v)$ rys $P = v_1 v_2 ... v_n v$
+                  \item trzeci przypadek rys. Niech $i \in \{1, 2, 3, ..., n\}$
+                        będzie najmniejszym indeksem $(v_i, v) \in E$ oraz $(v, v_{i+1}) \in E$,\newline
+                        wtedy $P = v_1 v_2 ... v_i v v_{i+1} v_{i+2} ... v_n$
+              \end{enumerate}
+    \end{enumerate}
+\end{mdframed}
+
+
+
+
+
+\begin{zad}[W]
+    W każdym polu szachownicy rozmiaru $n x n $ znajduje się jedna osoba.
+    Część osób zarażona jest wirusem grypy. Wirus grypy rozprzestrzenia się w dyskretnych
+    odstępach czasowych w sposób następujący:
+    \begin{itemize}
+        \item osoby zarażone pozostają zarażone,
+        \item osoba ulega zarażeniu jeżeli co najmniej dwie sąsiadujące z nią osoby są już zarażone
+              (przez osobę sąsiednią rozumiemy osobę siedzącą z przodu, z tyłu, z lewej lub prawej
+              strony).
+              Wykaż, że jeżeli na początku zarażonych jest istotnie mniej niż n osób, to w każdej chwili
+              przynajmniej jedna osoba pozostaje niezarażona.
+    \end{itemize}
+\end{zad}
+\begin{mdframed}
+    Jakaś podpowiedź. Przekątne (małe) dzielą plansze po zarażeniu
+    na kwadraty zarażonych. Przerwy w ciągach diagonalnych robią przerwy na końcu.
+
+    Ewentualnie:
+    Jeżeli rozrzucić komórki w pierwszej iteracji, jest ich n-1. liczymy obwod
+    tej figury. obwod ten jest rowny maksymalnie 4n - 4
+
+    jesli tylko uzasadnic formalnie ze przy kazdej iteracji obwod
+    jest conajwyżej taki ajk poprzednio, co tez znaczy ze nie
+    wszystkie sa zarażone, bo obwod byłby równy 4n.
+
+    Jak udowodnić tą zależność?
+
+    Od bartka:
+    Pusta kratka, $n$ zarażonych obok i $n \in \{1, 2, 3, 4\}$.
+    Rozważamy przypadki ile krawędzi jest przy każdym $n$.
+    Patrzymy ile znika i ile powstaje. Dochodzimy do tego że jest
+    nie więcej.
+\end{mdframed}
+
+
+
+
+
+
+\begin{zad}[`Jedrek']
+    Wykaż, że w grupie $n$ osób istnieją dwie, które mają taka samą liczbę znajomych.
+\end{zad}
+\begin{mdframed}
+    \textit{Reductio ad absurdum}
+
+    Zakładamy, że każdy ma inną ilość znajomych, czyli jest $n$ osób
+    i $n$ możliwych ilości znajomych (od $0$ do $n-1$) -- czyli ilstnieje osoba
+    posiadająca $0$ znajomych oraz soba posiadająca $n-1$ znajomych, czyli każdy
+    jest jej znajomym -- również osobą posiadająca $0$ znajomych.
+
+    \textit{Sprzeczność!}
+\end{mdframed}
+
+\begin{zad}[W]
+    Przy okrągłym stole jest $n$ miejsc oznaczonych proporczykami różnych
+    państw. Ambasadorowie tych państw usiedli przy tym stole tak, że żaden z nich nie siadł
+    przy właściwym proporczyku. Wykaż, że można tak obrócić stołem, że co najmniej 2
+    ambasadorów znajdzie się przed proporczykiem swojego państwa.
+\end{zad}
+\begin{mdframed}
+    Niech $f:[n] \to [n]$ tak że $\forall_{k\in[n]} f(x) \neq k$.
+    $f$ - permutacja
+    Niech $g$ - permutacja g = (1 2 3 4 5 ... n)
+    $O_n = f \circ g \circ g \circ g$ (i g złożone n razy)
+
+    Dirichlet. $\forall f:[n] \to [n-1]$ istnieje $x_1, x_2$
+    że $x_1\neq x_2$ tże $f(x_1)=f(x_2)$
+
+    $\forall_{k \in [n]} \exists_{i \in [n-1]} O_i(k) = k$
+    $\leftarrow$ funkcja by wrócił do właściwego proporczykami.
+
+    $F(k)$ = ilość obrotów stołem aby ambasador $k$ miał
+    przed sobą swój proporczyk.
+    Widzimy że nowa funkcja $F(k): [n] \to [n-1]$
+    Z zasady Dirichleta istnienieje dwóch ambasadorów $x_1, x_2$ tże $x_1 \neq x_2$
+    tże $F(x_1) = F(x_2)$.
+\end{mdframed}
+
+
+\begin{zad}[W]
+    Pokaż, że w dowolnym ciągu n liczb całkowitych istnieje (niepusty)
+    podciąg kolejnych elementów taki, że suma wyrazów podciągu jest wielokrotnością n.
+\end{zad}
+\begin{mdframed}
+    Weźmy ciąg: $a_1, a_2, a_3 ..., a_n$
+
+    Wprowadzmy ciag sum częściowych:
+    $S_k = a_1 + a_2 + ... + a_k$
+
+    Reszty z dzielenia przez $n$ są następującej postaci
+    $\{0, 1, 2, ... n_1\}$.
+    jesli istniej $S_k$ tże skmodn=o to koniec zadania
+
+    załóżmy ze tak nie jest, czyli ze dla kazdego ka w [n]
+    $S_k$ $mod n  \neq 0$
+    Czyli ile możliwości mamy na resztę od 1 do n-1.
+    z zasady diricchleta widzimy ze istnieje k'<k tże
+    Sk i Sk' maja tkaa sama reszte z dzielenia.
+    ale wtedy Sk-Sk' jest podzielne przez n i
+    reprezentuje sume ak'+1 + ak'+2 +...+ak
+
+    Widzimy zatem ze ciag ak'+1 do ak ma żądaną własność
+
+    jeżeli weźmiemy jakiś pierwszy podciąg
+    $a_1 modn \neq 0$
+    $a_1 + a_2 mod n \neq 0$ i $a_1 + a_2 mod n$
+
+\end{mdframed}
+
+
+
+
+
+\begin{zad}[`Jedrek' TO BE DONE]
+    Rozważ dowolną rodzinę podzbiorów zbioru $n$--elemetowego zawierającą
+    więcej niż połowę wszystkich podzbiorów. Wykaż, że w tej rodzinie muszą być dwa zbiory
+    takie, że jeden zawiera się w drugim.
+\end{zad}
+\begin{mdframed}
+    \textit{Dowód indukcyjny}
+
+    \begin{enumerate}
+        \item Dla $n=2$ oczywiste
+        \item Załóżmy, że jest to prawdą dla zbioru $n$ elementowego
+              którego podzbiorów jest $2^n$. Podzbiorów zbioru $n+1$ elementowego
+              jest $2^{n+1}$, $2^n$ bez elementu $n+1$
+    \end{enumerate}
+\end{mdframed}
+
+
+
+\begin{zad}[BRAK]
+    Dla $n$--elementowego zbioru $X$ rozważ pewną rodzinę jego podzbiorów
+    $\mathcal{F}$, gdzie $|F| > n/2$ dla każdego $F \in \mathcal{F}$. Wykaż, że istnieje
+    $x \in X$ należący do co najmniej połowy zbiorów z $\mathcal{F}$.
+\end{zad}
+\begin{mdframed}
+
+\end{mdframed}
+
+
+\begin{zad}[W]
+    Dana jest kwadratowa szachownica $2n \times 2n$ z wyciętym jednym polem.
+    Wykaż, że dla wszystkich wartości $n \geq 1$ możemy pokryć tę szachownicę kostkami w
+    kształcie litery L (czyli kwadrat $2 \geq 2$ bez jednego pola).
+\end{zad}
+\begin{mdframed}
+    Dowód indukcyjny.
+    \begin{enumerate}
+        \item $n = 1$; rysunek 1
+        \item zał ind spełnione dla $n$. teza ind dla $n+1$. rysunek2 ogólnie dzielimy na
+              cztery, zał ind, od pozostałych trzech odejmujemy po jednym kawałeczku, załatwiamy
+              je z ind a kawałeczki załatwiamy jednym l-em
+    \end{enumerate}
+\end{mdframed}
+
+\begin{zad}[W]
+    Dana jest kwadratowa szachownica $n \times n$. Dla jakich wartosci $n\geq 1$
+    możemy pokryć tę szachownicę kostkami wielkości $2 \times 2$ oraz $3 \times 3$.
+\end{zad}
+\begin{mdframed}
+    Dla kostek 2x2 i 3x3 oczywiste. Dla ich wielokrotności oczywsite.
+
+    Teraz łączenie. I go nie zrozumiałem. Well, shit happens.
+    Ale do przemyślenia.
+\end{mdframed}
+
+
+
+
+
+\begin{zad}[BRAK]
+
+\end{zad}
+\begin{mdframed}
+    zrobione, ale średnio z zapisem.
+    Nie zrozumiałem, ale za to macie zdjątko tablicy.
+    rysunek1.
+\end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Zestaw 2}          % ZESTAW 2
+
+\begin{zad}[R]
+    Na ile sposobów można ustawić $n$ wież na szachownicy
+    $n \times n$ tak, by żadne dwie nie znajdowały się w
+    polu wzajemnego rażenia.
+\end{zad}
+\begin{mdframed}
+    Starczy zauważyć, że dla każdej wieży wybieramy rząd i kolumnę
+    w której się znajduje -- i tym samym zmniejsza liczbę dostępnych
+    o jeden. Tak więc odpowiedź wynosi: \[n \cdot n \cdot (n-1) \cdot
+        (n-1) \cdot ... \cdot 2 \cdot 2 \cdot 1 \cdot 1 =  n! \cdot n!\]
+\end{mdframed}
+
+
+
+
+\begin{zad}[R]
+    Na ile sposobów można ustawić $k$ wież na szachownicy $n \times m$
+    tak, by żadne dwie nie znajdowały się w polu wzajemnego rażenia.
+\end{zad}
+\begin{mdframed}
+    Zadanie analogiczne od poprzedniego - z tym, że zmienił nam się
+    rozmiar planszy, a ponadto nie wypełniamy jej całej. Zasada
+    pozostaje jednak ta sama. Na start jednak warto założyć, że
+    $k \leq max\{n, m\}$ (choć w sumie jeżeli tak nie jest, to
+    odpowiedź to 0). Mając to już za sobą.
+    \[n \cdot m \cdot (n-1) \cdot (m-1) \cdot ... \cdot (n - k +1) \cdot (m -k +1)\]
+    (wykonujemy mnożenie $k + k$ elementów -- stąd to $-k + 1$).
+\end{mdframed}
+
+
+
+
+\begin{zad}[R]
+    Znalźć definicje rekurencyjne następujących ciągów:
+    \begin{enumerate}
+        \item $a(n)$ -- liczba słów długości $n$ nad alfabetem
+              $\{0, 1\}$, które nie zawierają dwóch jedynek koło siebie.
+        \item  $b(n)$ -- liczba różnych pokryć prostokąta o wymiarze
+              $2 \times n$ dominami wymiaru $2 \times 1$.
+    \end{enumerate}
+\end{zad}
+\begin{mdframed}
+    \begin{enumerate}
+        \item Oczywiście $a(1)=2$, $a(2)=3$.  Rozważmy słowo $n$ elementowe.
+              Zauważamy, że jeżeli ono kończy sie ono zerem to poprzedzające słowo $n-1$
+              elementowe jest dowolne. Jeżeli natomiast kończy się jedynką,
+              to poprzedzające słowo $n-2$ elementowe jest dowolne
+              (tak jakby sie cofamy krok dalej by mieć dowolność).
+              Stąd: $a(n)=a(n-1)+a(n-2)$.
+        \item Analogicznie do poprzedniego. Jak wiemy $a(1) = 1$, $a(2) = 2$. Zastanówmy się nad $a(n)$:
+              Rozważamy ciąg o długości $n$. Jeżeli na końcu jest blok poziomy,
+              to wiemy że powstał on z ciągu długości $a(n-2)$.
+              Jeżeli jest pionowy, to wiemy, że musiał on powstać z ciągu długości $n-1$.
+              A stąd $a(n) = a(n-1) + a(n-2)$.
+    \end{enumerate}
+\end{mdframed}
+
+
+
+
+\begin{zad}[W/R]
+    Ile rozwiązań ma równanie $x_1 + x_2+x_3+x_4 = 7$:
+    \begin{enumerate}
+        \item gdzie $x_i$ są liczbami naturalnymi?
+        \item gdzie $x_i$ są dodatnimi liczbami naturalnymi?
+    \end{enumerate}
+\end{zad}
+\begin{mdframed}
+    Starczy wykonać siatkę która na dole ma $x_1 ... x_4$, a w rzędach
+    wartości od 0 (1) do 7. Wysokość nad $x_i$ oznacza wartość sumy do
+    tego elementu włącznie, a przeskok względem poprzedniej wysokości
+    oznacza wartość danego $x_i$. Więc można to potraktować jako ścieżki,
+    a na mocy własności z wykładu wiemy ile jest ścieżek po kracie. Tak więc:
+    \begin{enumerate}
+        \item \[\binom{7+4-1}{7}=\binom{10}{7}\]
+        \item \[\binom{3+4-1}{3}=\binom{6}{3}\]
+    \end{enumerate}
+\end{mdframed}
+
+
+
+
+\begin{zad}[W]
+    Rozważmy czekoladę złożoną z $m\times n$ kostek.
+    Na ile sposobów można wykroić prostokąt złożony z $k \times k$
+    sąsiadujących ze sobą kostek ze sobą kostek czekolady?
+\end{zad}
+\begin{mdframed}
+    Na początek warto wykonać założenia $k \leq n$, $k \leq m$
+    (albo stwierdzić że wtedy odpowiedź to zero). Potem zauważamy,
+    że ilość sposobów można połączyć z ilością punktów startowych
+    ulokowania prostokąta w tabliczce. Mamy ich
+    \[(n-k+1)\times (m-k+1)\]
+\end{mdframed}
+
+
+
+
+\begin{zad}[W]
+    (Reguła sumowania po górnym indeksie). Udowodnij, że dla
+    $n, k \in \mathbb{N}$ zachodzi
+    \[\sum_{j=0}^n\binom{j}{k} = \binom{n+1}{k+1}\]
+\end{zad}
+\begin{mdframed}
+    Starczy zrobić indukcje. Wychodzi za darmo.
+    Kombinarotrycznie też się da.
+    Polecam spróbować samemu.
+\end{mdframed}
+
+
+
+
+\begin{zad}[W]
+    (Reguła sumowania równoległego). Udowodnij, że dla $n, k \in \mathbb{N}$
+    zachodzi \[     \]
+\end{zad}\
+\begin{mdframed}
+    Starczy zrobić indukcje. Wychodzi za darmo.
+\end{mdframed}
+
+
+
+
+\begin{zad}[W]
+    Ile jest funkcji $f:\{1, ..., n\} \to \{1, ..., n\}$ monotonicznych takich,
+    że $f(i) \leq f(j) $ dla $i < j$?
+\end{zad}
+\begin{mdframed}
+    Rozwiązanie korzystające z tej samej koncepcji co 4 z tego zestawu.
+    Tworzymy kratkę, gdzie kolumny to argumenty, a rzędy to wartości.
+    Interesują nas ścieżki z początku do końca - które generują nam wszystkie funkcje
+    spełniające warunki zadania. Tak więc:
+    \[ \binom{n + n -1 }{n} = \binom{2n-1}{n} \].
+\end{mdframed}
+
+
+
+
+\begin{zad}[R]
+    Ile jest $k$--elementowych podzbiorów zbioru $n$--elementowego, które nie
+    zawierają dwóch sąsiednich liczb?
+\end{zad}
+\begin{mdframed}
+    Zauważamy, że możemy stworzyć funkcję `jest nie--jest'. Jest to funkcja charakterystyczna
+    przyjmująca 0 lub 1 w zależności od tego czy element zbioru występuje, czy nie występuje w podzbiorze.
+    Generujemy więc zbiór typu 10101 aż do uzyskania $k$ jedynek (tu $k=3$), ustalamy miejsca które możemy dopełniać zerami (by były to ciągi długości $n$ -- funkcja
+    charakterystyczna). Czyli mamy $k-1$ zer na start i $n-(k)-(k-1)$ zer jeszcze do zrobienia.
+    Czyli finalnie:
+    \[\binom{n-k+1}{k}  \]
+    I to było rozwiązanie pierwsze, myślę bardziej oczywiste rozwiązanie.Da się jednak prościej -- zaczynając od ciągu $n-k$ zer i wkładając jedynki w dozwolone miejsca.
+\end{mdframed}
+
+
+\begin{zad}[zawsze na kolokwim -- podwójne zliczanie]
+    Posługując się interpretacją kombinatoryczną udowodnij, że:
+    \[ \sum_{i=0}^{k} \binom{n}{i} \binom{n-i}{k-i} = 2^k \binom{n}{k} \]
+\end{zad}
+\begin{mdframed}
+    %Zdjęcie 18.03.2025 16:36
+    Historyjkowo: wybieramy z $n$ osób dwie drużyny, które w sumie mają mieć $k$ osób.
+
+    L: wybieramy osoby do podziału na drużyny na $\binom{n}{k}$ sposobów.
+    Każdą z $k$ osób które wybraliśmy wrzucamy albo do jednej albo do drugiej drużyny
+    -- czyli mamy 2 możliwości. Stąd ilość podziałów na drużyny wynosi $2^k \binom{n}{k}$
+
+    P: Ustalmy $i$ liczbę osób w pierwszej drużynie. Wybieramy jej skład -- robimy
+    to na $\binom{n}{i}$ możliwości. Wybierzmy skład drugiej drużyny
+    (z pozostałych nam nieprzydzielonych ludzi)
+    -- składającej się z $k-i$ osób: $\binom{n-i}{k-i}$.
+    Pierwsza drużyna może mieć od $0$ do $k$ osób, więc sumując po tych wartościach
+    otrzymujemy: $\sum_{i=0}^{k} \binom{n}{i} \binom{n-i}{k-i}$.
+
+    A stąd zauważamy, że L = P, czyli:
+    \[ \sum_{i=0}^{k} \binom{n}{i} \binom{n-i}{k-i} = 2^k \binom{n}{k} \]
+
+
+\end{mdframed}
+
+
+
+
+\begin{zad}
+    Udowodnij poniższe tożsamości na dwa sposoby: posługując się interpretacją
+    kombinatoryczną albo rozwinięciem dwumianu $(1 + x)^n$:
+    \begin{enumerate}
+        \item \[\sum_{k=0}^{n}k\binom{n}{k} = n2^{n-1}\]
+        \item \[\sum_{k=0}^{n}k^2\binom{n}{k}= (n+n^2)2^{n-2}\]
+        \item \[\sum_{i=0}^{k}\binom{m}{i}\binom{n}{k-i} = \binom{m+n}{k} \]
+    \end{enumerate}
+\end{zad}
+\begin{mdframed}
+    \begin{enumerate}
+        \item (można pochodną dwumianu) historyjka o wyborze króla i jego wojska
+        \item (można drugą pochodną dwumianu)
+    \end{enumerate}
+\end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Zestaw 3}          % ZESTAW 3
+
+\begin{zad}
+    Wykaż, że dla dowolnego $n \geq 1$ istnieje $k \geq 1$ takie, że:
+    \[S(n, 0) < S(n, 1) < ... < S(n, k - 1 ) \leq S(n, k) > S(n, k+1) > ... > S(n, n)\]
+\end{zad}
+\begin{mdframed}
+    Zadanie trudne, na ćwiczeniach prowadzący stwierdził, że nie robimy -- bo za trudne.
+    Powodzenia!
+\end{mdframed}
+
+
+
+
+\begin{zad}
+    Wykaż, że:
+    \[B(n) = \sum_{i=0}^{n-1} \binom{n-1}{i}B(i)\]
+\end{zad}
+\begin{mdframed}
+    Historyjkowo:
+
+    Weźmy zbiór $n-1$ elementowy. Wybierzmy z niego $k$ elementów, co
+    możemy zrobić na $\binom{n-1}{k}$ sposobów. Następnie dołączamy do
+    wybranych elementów $n$ element. Pozostałe $n-k-1$ elementów
+    możemy podzielić na $B(n-k-1)$ sposobów. Sumując k od $0$ do $n-1$:
+    \[B(n) = \sum_{k=0}^{n-1}B_{(n-k-1)}\binom{n-1}{k} \overset{i=n-1-k}{=}
+        \sum_{i=0}^{n-1}B(i)\binom{n-1}{n-1-i} \]
+    \[B(n) = \sum_{i=0}^{n-1} \binom{n-1}{i}B(i)\]
+
+
+
+\end{mdframed}
+
+
+
+
+\begin{zad}
+    Wykaż, że dla $n, k \in \mathbb{N}$ zachodzi:
+    \[S(n,k+1)=\frac{1}{(k+1)!} \sum_{0<i_0<...<i_{k-1}<n} \binom{n}{i_{k-1}}\binom{i_{k-1}}{i_{k_2}}...\binom{i_1}{i_0}     \]
+\end{zad}
+\begin{mdframed}
+    Historyjkowo:
+
+    Zacznijmy od przepisania powyższego równania do trochę innej formy:
+    \[(k+1)! \cdot S(n,k+1) = \sum_{0<i_0<...<i_{k-1}<n} \binom{n}{i_{k-1}}\binom{i_{k-1}}{i_{k_2}}...\binom{i_1}{i_0}     \]
+
+    Zastanówmy się co mamy po prawej. Mamy sumę po wszystkich monotonicznych ciągach od $0$ do $n$.
+    Weźmy jeden konkretny. Weźmy ponadto jakiś zbiór `duży' (nie w sensie wielkości, ale konceptu) $n$ elementowy
+    zbiór i weźmy wybierzmy z niego $i_{k-1}$ elementów (robimy to na $\binom{n}{i_{k-1}}$ -- sposobów).
+    Następnie z tego naszego zbioru $i_{k-1}$ elementów wybierzmy zbiór $i_{k-2}$ elementowy
+    (robimy to ponownie na $\binom{i_{k-1}}{i_{k-2}}$); i tak dalej po wszystkich wyrazach naszego ciągu.
+    I co otrzymujemy? Podział naszego `dużego' zbioru $n$ -- elementowego na $k+1$ zbiorów, ale z kolejnością.
+    A co mamy po lewej? Podział zbioru $n$ elementowego na $k+1$ podzbiorów -- ale bez kolejności, którą można
+    dorzucić za pomocą $(k+1)!$.
+    \[
+        L=P
+    \]
+
+
+\end{mdframed}
+
+
+
+
+
+\begin{zad}
+    Rozważ  następującą procedurę generującą pewne liczby naturalne
+    $\{a_{i,j}\}_{1 \geq i \geq j}$:
+    \begin{enumerate}
+        \item $a_{0,0} = 1$,
+        \item $a_{n+1, 0} = a_{n,n}$, dla $n \geq 0$,
+        \item $a_{n+1, k+1} = a_{n, k} + a_{n+1, k}$, dla $n \geq k \geq 0$.
+    \end{enumerate}
+\end{zad}
+\begin{mdframed}
+    Zadanie trudne, niestety sam nie zrobiłem ani nie zapisałem rozwiązania na ćwiczeniach.
+    Wiem, że w rozwiązaniu wykorzystaliśmy pracę \href{https://www.sciencedirect.com/science/article/pii/S0195669810001502}{dostępną tutaj!}.
+\end{mdframed}
+
+
+
+
+\begin{zad}
+    Wykaż, że liczba podziałów zbioru $(n - 1)$  elementowego jest równa
+    liczbie podziałów zbioru $\{1, ..., n\}$ niezawierających sąsiednich liczb w jednym bloku.
+\end{zad}
+\begin{mdframed}
+    Rozważmy funkcję
+    pomiędzy podziałem zbioru $n-1$ elementowego
+    a podziałem zbioru $\{1, ..., n\}$:
+
+    Po pierwsze, poindeksujmy po kolei elementy naszego podziału $[n-1]$.
+    Idąc od prawej po naszym $n-1$ elementowym podziale wybieramy z każdego bloku co drugą liczbę zaczynając od drugiej,
+    wyciągamy ją i idziemy dalej. Po przejściu przez cały podział dorzucamy do niego nowy zbiór:
+    składający się z wszystkich wyciągniętych przez nas elementów i $n$.
+
+    Na przykład:
+    \[ 12|3|45678 \to 864|3|2|7519\]
+
+    \begin{center}
+        \textit{(trzeba jeszcze tylko udowodnić, że ta funkcja jest bijekcją)}
+    \end{center}
+
+    Zauważamy, że w ten sposób jednoznacznie stworzyliśmy zbiór będący podziałem zbioru $\{1, ..., n\}$.
+    A jak wiemy z \textit{ELiTMu} jeżeli pomiędzy zbiorami istnieje bijekcja to są równoliczne.
+\end{mdframed}
+
+
+
+
+\begin{zad}
+    Udowodnij, że liczba ukorzenionych drzew binarnych na $n$ wierzchołkach to $n$-ta liczba Catalana.
+
+    Ukorzenione drzewo jest drzewem binarnym, jeśli każdy wierzchołek ma co najwyżej
+    dwójkę dzieci przy czym co najwyżej jedno lewe dziecko i co najwyżej jedno prawe dziecko.
+\end{zad}
+\begin{mdframed}
+    Chcemy dowieźć, że liczba ukorzenionych drzew binarnych $N(n)$ jest równa $B(n)$.
+
+    Na start zauważamy, że $F(1) = 1 = B(1)$.
+
+    Teraz chcemy pokazać, że: $F(n) = \sum_{i=0}^{n-1}F(i)F(n-i-1)$.
+    Rozważmy drzewo $n$ wierzchołkowe.
+    Niech prawe dziecko ma korzeń z $i$ wierzchołkami a lewe z $n - i - 1$.
+    Czyli istnieje $F(i)$ możliwych drzew z dla prawego dziecka i $F(n-1-i)$ dla lewego.
+    Czyli dla tego zespołu istnieje $F(i) \cdot F(n-1-i)$ możliwych drzew.
+    Wiemy, że liczba $i$ wierzchołków po prawej może osiągnąć wartości od $0$
+    do $n-1$ czyli
+    \[F(n) = \sum_{i=0}^{n-1}F(i)F(n-i-1)          \]
+
+    Co jest rekurencją spełnianą przez liczby Bella.
+\end{mdframed}
+
+
+
+
+\begin{zad}
+    Triangulacją $n$ -- wierzchołkowego wielokąta wypukłego nazywamy zbiór
+    $(n - 3)$ wzajemnie nieprzecinających się jego przekątnych, które dzielą jego obszar na
+    $(n - 2)$ trójkątów.
+    \begin{enumerate}
+        \item ile jest triangulacji $n$--wierzchołkowego wielokąta wypukłego?
+        \item Ile jest triangulacji $n$--wierzchołkowego wielokąta wypukłego, w których każdy trójkąt
+              triangulacji ma przynajmniej jeden bok na brzegu wielokąta?
+    \end{enumerate}
+\end{zad}
+\begin{mdframed}
+    Polecam wziąć sobie kartkę i rysować, bo może być ciężko.
+    \begin{enumerate*}
+        \item Weźmy $n+2$ wierzchołkowy wielokąt wypukły. Zastanówmy się ile jest triangulacji $T(n)$?
+              Weźmy jeden z jego wierzchołków. Wybierzmy ponadto po kolei kolejne krawędzie
+              tego wielokąta i utwórzmy z na nich trójkąty.
+              Zauważamy, że możemy wybrać $n$ krawędzi, stworzyć na nich trójkąty, a dla powstałych
+              wielokątów zapisać rekurencję. Tak więc wynikowa suma po $i \in [n]$ krawędziach będzie sumą po wszystkich podziałach
+              utworzonych po wszystkich trójkątach, tak więc:
+              \[T(n) = \underbrace{\underbrace{T(0)}_{lewa} \cdot \underbrace{T(n-1)}_{prawa}}_{\text{dla trójkąta na $i = 1$}}  +  T(1) \cdot T(n-2) \cdot ... \cdot T(n-1) \cdot T(0)\]
+
+              Co jest rekurencją spełnianą przez liczby Catalana.
+
+        \item Na pewno jest jakieś elegantsze rozwiązanie, ale da się stwierdzić, że liczba ta wynosi
+
+    \end{enumerate*}
+
+
+
+\end{mdframed}
+\begin{mdframed}
+    \begin{enumerate}
+        \item
+              Weźmy bok 12 -- jest on częścią pewnego trójkąta 12 i (po triangulacji)
+              Jeśli $T_{n+2}$ = wszystkie figury
+              $T_{n+2}$ = te triangulacje z $T_{n+2}$, które będą zwierały $\Delta12$
+              i stąd ${T_{n+2}^i}$ sa parami rozłączne oraz
+              $T_{n+2} = U_{i+3}^{n+1}T_{n+2}^i$
+              Mamy $|T_{n+2}| = \sum_{i = 3}^{n+1}|T_{n+2}^i| = \sum_{i = 3 }^{n+1}|T_i| \cdot |T_{n+3-i}|$
+              Niech $|T_2| = 1$ i $|T_3| = 1$.
+
+              Co po przekształceniach da $n$--tą liczbę Catalana
+
+
+        \item
+              Podpunkt 2 -- dokładnie tak samo jak 1.
+              Niech figura ma $n$ wierzchołków.
+              Wybieramy bok 12 oraz zauważamy że 12 jest częścią pewnego trójkąta $\Delta12$
+              i:
+              \begin{enumerate}
+                  \item
+                        $i = 3$, $n$
+                        Zauważmy, że w przypadku i = 3 krawedz 13 musi byc
+                        czescia trojkata $\Delta134$ lub $\Delta13n$ i bla bla bla ostatecznie generujemy procedure gdzie tak schodkowo generujemy, i dla kazdej krawedzi mamy dwie możliwości zbudowania nowego trojakąta.
+                        Ile zatem takich możliwości jest? Jest ich $2^{n-4}$.
+                        Sytuacja symetryczna dla $n$.
+                  \item $i \neq 3$ oraz $i \neq n$
+                        \[2^{i-4} \cdot 2^{n-i-1} = 2^{n-5} \]
+
+              \end{enumerate}
+              Czyli sumarycznie:
+              \[ 2^{i-4} + 2^{i-4} + (n-4)\cdot 2^{n-5}\]
+              czyli do $(n\cdot 2^{n-5})$
+
+    \end{enumerate}
+
+\end{mdframed}
+
+
+
+
+\begin{zad}[R/prywata]
+    Wykaż, że liczba drzew etykietowanych na zbiorze ${1, ..., n}$ wynosi $n^{n-2}$.
+\end{zad}
+\begin{mdframed}
+    Drogi studencie, to jest jedno z tych zj@b@nych zadań, które moim zdaniem
+    nie powinno sie tu znaleźć.
+
+    Jest to nietrywialny problem świata rzeczywistego -- który całe szczęście
+    ma swoje rozwiązanie (o grozo z nazwiskiem!).
+
+    Algorytm, będący bijekcją pomiędzy dowolnym (a de facto większym od 2) grafem
+    a ciągiem $n-2$ liczb o możliwych wartościach $[n]$ -- którego liczność to oczywiście
+    \[n^{n-2}\]
+    \href{https://pl.wikipedia.org/wiki/Kod_Pr%C3%BCfera}{znajdziesz tutaj!}
+    Jedynym problem pozostaje udowodnienie, że powyższa funkcja faktycznie jest bijekcją...
+\end{mdframed}
+
+
+
+
+
+
+\chapter{Zestaw 4}          % ZESTAW 4
+
+\begin{zad}
+    Oblicz $S(n, 2)$.
+\end{zad}
+\begin{mdframed}
+    Czyli \textit{de facto} pytanie o to, na ile sposobów można podzielić
+    na 2 niepuste zbiory zbiór $n$ elementowy.
+    \[S(n, 2) = \frac{\overbrace{2^n}^{\text{wszystkie podzbiory}} - \overbrace{2}^{\text{bez pustego i całego}}}{\underbrace{2}_{\text{nie interesuje nas kolejność}}} = 2^{n-1}-1\]
+
+    \textit{Oczywiście da się to zrobić też rekurencyjnie -- choć jest to dłuższe zadanie (które mimo wszystko polecam zrobić).}
+\end{mdframed}
+
+
+
+
+\begin{zad}
+    Wykaż, że mamy dokładnie
+    \[\frac{n!}{1^{\lambda_1} \cdot 2^{\lambda_2} \cdot  ... \cdot n^{\lambda_n} \cdot \lambda_1! \cdot ... \cdot \lambda_n!}\]
+    permutacji zbioru $[n]$ o typie $1^{\lambda_1} \cdot 2^{\lambda_2} \cdot ... \cdot n^{\lambda_n} $  (mających $\lambda_i$ cykli długości i dla $i \in [n]$).
+\end{zad}
+\begin{mdframed}
+    Permutację $[n]$ jako funkcję można utożsamiać z ciagiem $n$ elementowym,
+    przy czym ważne jest to, że nie istotny jest początek ani koniec tego ciągu
+    (bo permutacja to cykl).
+
+    Zauważamy, że wszystkich permutacji $[n]$ jest $n!$.
+    Zapiszmy te cykle w postaci ciągu:
+    \[\underbrace{(\cdot)(\cdot) ... (\cdot)}_{\lambda_1}\underbrace{(\cdot \cdot)...(\cdot \cdot)}_{\lambda_2} ... \underbrace{(\underbrace{\cdot ... \cdot}_{n})...(\underbrace{\cdot ... \cdot}_{n})}_{\lambda_n}\]
+
+    Usuńmy z każdego $i$ elementowego ciągu kolejność
+    (bo chcemy cykle, nie stricte ciągi), czyli dla każdego podzielmy przez $i$,
+    co robimy finalnie dzieląc przez $i^{\lambda_i}$ dla każdego $i$.
+
+    Ponadto, zauważamy, że nasz sposób ułożenia cykli zakłada kolejność,
+    której pozbędziemy się dzieląc przez $\lambda_i!$ dla każdej grupy cykli.
+
+    Czyli finalnie liczba takich cykli będzie równa:
+    \[\frac{n!}{1^{\lambda_1} \cdot 2^{\lambda_2} \cdot  ... \cdot n^{\lambda_n} \cdot \lambda_1! \cdot ... \cdot \lambda_n!}\]
+
+    %stare, zle mazulisa
+    %  Dla każdej $\lambda_i$ jest $i$ cykli w nawiasie, więc będziemy dzielić przez:
+    % \[1^{\lambda_1}2^{\lambda_2}\cdot ... \cdot n^{\lambda_n}\]
+    %Wewnątrz każdego cyklu jest $\lambda_i!$ permutacji, więc dzielmy przez:
+    %\[(\lambda_1! \lambda_2! \cdot ... \cdot \lambda_n!)\]
+    %nowe, dobre, jawora
+\end{mdframed}
+
+
+
+
+\begin{zad}
+    Posługując się interpretacją kombinatoryczną, wykaż tożsamość:
+    \[S(n+1,m+1) = \sum_k \binom{n}{k}S(k,m)\]
+\end{zad}
+\begin{mdframed}
+    Kombinatorycznie:
+
+    \textit{Lewa:}
+    Liczba podziałów zbiory $\left[n+1\right]$ na $m+1$ bloków:
+    \[S(n+1,m+1)\]
+
+    \textit{Prawa:}
+    Wybieramy $k$ liczb które nie będą w nowym bloku z liczbą $n+1$.
+    Pozostałe będą z $n+1$. Spośród liczb wybranych tworzymy $m$ bloków
+    na $S(k,m)$ sposobów. Sumując po wszystkich możliwych $k$:
+    \[\sum_k \binom{n}{k}S(k,m)\]
+
+    \begin{center}
+        L=P
+    \end{center}
+
+\end{mdframed}
+
+
+
+
+\begin{zad}
+    Zakładając, że zachodzi równość:
+    \[
+        (x_1 + ... + x_k)^n = \sum_{n_1+...+n_k=n}\binom{n}{n_1 n_2 ... n_k}x_1^{n_1}\cdot...\cdot x_k^{n_k}
+    \]
+    podaj ile wynosi $\binom{n}{n_1 n_2 ... n_k}$.
+\end{zad}
+\begin{mdframed}
+Zadanie koncepcyjne w zasadzie analogiczne do kombinatorycznego wyprowadzenia
+$(x+y)^n$.
+
+Iloczyn $x_1^{n_1}\cdot ... \cdot x_k^{n_k}$ powstaje w sposób taki, że z każdego z nawiasów:
+\[(x_1 + ... + x_k) \cdot (x_1 + ... + x_k) \cdot ... \cdot (x_1 + ... + x_k)\]
+wybieramy jedną z liczb od $x_1$ do $x_k$, przy czym $x_i$ wybieramy
+$n_i$ razy.
+Wybierzmy z których nawiasów wybieramy. Dla $n_1$ wybieramy z $\binom{n}{n_1}$
+nawiasów, dla $n_2$ z $\binom{n-n_1}{n_2}$ itd. dla $n_k$ z
+$\binom{n-n_1-n_2-...n_{k-1}}{n_k} = \binom{n_k}{n_k}$.
+I robimy tak po wszystkich możliwych układach, ale wiemy, że lewa
+strona założenia równa się prawej, więc:
+\[
+    \binom{n}{n_1 n_2 ... n_k} = \binom{n}{n_1} \binom{n-n_1}{n_2} ... \binom{n_k}{n_k}
+\]
+
+\begin{center}\href{https://lidicky.name/oldteaching/20.569X/l03%20-%20Binomial%20Theorem.pdf}{(można przeczytać dodatkowo)}\end{center}
+\end{mdframed}
+
+
+
+
+\begin{zad}
+    Wykaż, że
+    \[
+        \sum_{i=0}^{n} i \left[ n \atop i \right] = n! H_n,
+    \]
+    gdzie $H_n = 1 + \frac{1}{2} + ... + \frac{1}{n}$.
+\end{zad}
+\begin{mdframed}
+    Historyjkowo:
+
+    \textit{Lewa:}
+    Zastanówmy się, ile jest permutacji $[n]$ w których wyróżniamy jeden cykl.
+    Ustalmy $i$. Generujemy wszystkie permutacje $n$-elementowe o $i$ cyklach za pomocą
+    $\left[ n \atop i \right]$ i wybieramy z niej wyróżnioną na $i$ sposobów.
+    Sumując po wszystkich $i$ (liczbach cykli) otrzymujemy:
+    \[\sum_{i=0}^{n} i \left[ n \atop i \right]\]
+
+    \textit{Prawa:}
+    Zróbmy to samo, ale inaczej. Ustalmy $k$ -- liczbę elementów
+    w wyróżnionym cyklu. Stwórzmy wyróżniony cykl,
+    możemy zrobić to na $\binom{n}{k} \cdot i! \cdot \frac{1}{k}$.
+    Z reszty elementów tworzymy permutację na $(n-k)!$ sposobów.
+    Czyli finalnie otrzymujemy:
+    \[
+        \sum_{k=1}^{n}\binom{n}{k}\frac{k!}{k}(n-k)! = \sum_{k=1}^{n}\frac{n!}{k} = n! \cdot H_n
+    \]
+
+
+
+
+\end{mdframed}
+
+\begin{zad}[]
+    Wykaż, że dla dowolnego $x \in \mathbb{R}$ zachodzi:
+    \begin{enumerate}
+        \item $x^n = \sum_{k}S(n,k) x^{\underline{k}}$
+        \item $x^{\bar{n}} = \sum_{k} \left[n \atop k \right] x^k$.
+    \end{enumerate}
+\end{zad}
+\begin{mdframed}
+    \begin{center} Udowodnimy najpierw dla $x \in \mathbb{N}$, potem zbiorczo uzasadnimy dla $\mathbb{R}$.\end{center}
+    \begin{enumerate*}
+        \item Historyjkowo:
+
+              \textit{Lewa:}
+              Wrzucamy $n$ osób do $x$ pokoi. Robimy to na $x^n$ sposobów.
+
+              \textit{Prawa:}
+              Dzielimy $n$ osób na $k$ grup -- robimy to na $S(n,k)$ sposobów.
+              Wybieramy z wszystkich $x$ pokoi $k$ pokoi na $\binom{x}{k}$
+              sposobów i przydzielamy je do grup na $k!$ sposobów.
+              Tak więc sumarycznie sumując po wszystkich licznościach $k$:
+              \[\sum_{k} S(n, k) \cdot \binom{x}{k} \cdot k! = \sum_{k} S(n, k) \cdot x^{\underline{k}} \]
+
+              Pozostaje jedynie kwestia uzasadnienia, że dzieje się tak
+              nie tylko dla $x \in \mathbb{N}$, ale i dla $x \in \mathbb{R}$. \newline
+
+
+        \item Historyjkowo:
+
+              \textit{Prawa:}
+              Będziemy permutować $[n]$, a powstałe cykle dzielić pomiędzy szuflady.
+              Ustalmy $k$. Perutmujemy zbiór $[n]$ na $k$ cykli, robimy to na $\left[n \atop k \right]$ sposobów.
+              Każdy z otrzymanych cykli wrzucamy do szufladki, robimy to na $x^k$ sposobów.
+
+              Sumując po wszystkich $k$ otrzymujemy:
+              \[\sum_k \left[n \atop k \right] \cdot x^k\]
+
+              \textit{Lewa:}
+              Bierzemy po kolei elementy z $[n]$ i wrzucamy je do dostępnych miejsc (szufladek i fragmentów permutacji).
+              Pierwszy możemy wrzucić na $x$ sposobów, drugi na $(x+1)$, trzeci na $(x+2)$ itd. Sumarycznie, dla wszystkich elementów:
+              \[ \underbrace{x \cdot (x+1) \cdot (x+2) \cdot ... \cdot (x + n - 1)}_{\text{$n$ elementów}} = x^{\underbar{n}} \] \newline
+
+              Udowodniliśmy powyższe równości dla $x \in \mathbb{N}$, zauważmy, że po obu stronach
+              równości mamy wielomiany, przerzucając je na jedną stronę zauważymy, że powstały
+              wielomian ma nieskończenie wiele miejsc zerowych, jedyny taki wielomian to wielomian
+              zerowy, wielomiany po obu stronach równości są sobie równe, więc równość zachodzi także dla $x \in \mathbb{R}$.
+    \end{enumerate*}
+\end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Zestaw 5}          % ZESTAW 5
+
+\begin{zad}
+    Wykaż zasadę włączeń i wyłączeń korzystając z indukcji po liczbie zbiorów.
+\end{zad}
+\begin{mdframed}
+
+\end{mdframed}
+
+
+
+
+\begin{zad}[Autorem rozwiązania jest: `Kuba Jaworski']
+    Wykaż, że mamy
+    \[
+        \sum_{j=0}^{m}(-1)^j \binom{m}{j}(m-j)^n
+    \]
+    suriekcji ze zbioru $[n]$ w zbiór $[m]$.
+\end{zad}
+\begin{mdframed}
+    Funkcja będąca surjekcją jest funkcją, której zbiór wartości jest
+    równy przeciwdziedzinie.
+
+    Zauważmy, że liczba surjekcji to liczba wszystkich funkcji odjąć
+    liczba funkcji nie będących surjekcjami.
+
+    Wszystkich funkcji $f:[n] \to [m]$ mamy: $n^m$.
+\end{mdframed}
+
+
+
+\begin{zad}
+    Ile jest ciągów długości $2n$ takich, że każda liczba $i \in [n]$
+    występuje dokładnie dwa razy oraz kaze sąsiednie dwa wyrazy są różne.
+\end{zad}
+\begin{mdframed}
+
+\end{mdframed}
+
+
+
+
+\begin{zad}
+    Wykaż, że dla $n \geq 3$ zachodzi tożsamość
+    \[
+        D(n) = (n-1)(D(n-1) + D(n-2))
+    \]
+    gdzie $D(n)$ jest liczbą permutacji zboru $[n]$ bez punktów stałych.
+\end{zad}
+\begin{mdframed}
+
+\end{mdframed}
+
+
+
+
+\begin{zad}
+    Wykaż (najlepiej kombinatorycznie), że dla dowolnych $n, k \in \mathbb{N}$
+    zachodzi:
+    \begin{enumerate}
+        \item $S(n, k) = \sum_{0 \leq m_1 \leq m_2 \leq ... \leq m_{n-k} \leq k} m_1m_2 \cdot ... \cdot m_{n-k}$
+        \item $c(n, k) = \sum_{0 < m_1 < m_2 < ... < m_{n-k} < k} m_1m_2 \cdot ... \cdot m_{n-k}$
+    \end{enumerate}
+\end{zad}
+\begin{enumerate}
+    \item z1
+    \item z2
+\end{enumerate}
+
+
+
+\begin{zad}
+    Ciąg podziałów zbioru ${1, ..., n}$ tworzymy następująco. Startujemy
+    od podziału zawierającego tylko zbiór ${1, ..., n}$. Podział $(i + 1)$--wszy
+    otrzymujemy z podziału $i$-tego poprzez:
+    \begin{enumerate}
+        \item wybranie jednego, co najmniej $2$-elementowego zbioru z podziału $i$-tego i podzielenie
+              go na dwa niepuste podzbiory,
+        \item podzielenie każdego, co najmniej $2$-elementowego zbioru z podziału $i$-tego na dwa
+              niepuste podzbiory.
+    \end{enumerate}
+    W obu przypadkach procedura kończy swoje działanie jeżeli wszystkie zbiory podziału są
+    jednoelementowe. Na ile sposobów można wykonać powyższe procedury? Na ile sposobów
+    możemy wykonać powyższe procedury zakładając, że po każdym kroku zbiory podziałów
+    zawierają kolejne liczby naturalne?
+\end{zad}
+\begin{mdframed}
+
+\end{mdframed}
+
+
+\chapter{Zestaw 6}          % Zestaw 6
+
+
+
+\end{document}
